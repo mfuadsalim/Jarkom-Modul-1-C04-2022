@@ -23,7 +23,7 @@ Menggunakan filter `http.host contains monta.if.ac.id`. Kemudian klik `file` lal
 
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192125257-78679f6f-bb12-4929-a566-e696d7e3b8d3.png">
 
-Kemudian pilih file dengan nama “194” karena file tersebut yang mengandung file detail topik. Save file tersebut dengan format html.
+Kemudian pilih file dengan nama `194` karena file tersebut yang mengandung file detail topik. Save file tersebut dengan format `html`.
 
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192125286-896ce937-a8d7-4d1c-8dd5-974210c64f05.png">
 
@@ -32,59 +32,43 @@ Maka didapatkan hasil seperti gambar di bawah.
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192125304-5cdee7cf-f507-405b-a0cb-ee64482cb446.png">
 
 
-## 3. Ikuti perintah di basic.ichimarumaru.tech! Username dan password bisa didapatkan dari file .pcapng!
-- Gunakan syntax filter `http.host contains "basic.ichimarumaru.tech"` pada file `.pcapng` yang telah didownload untuk nomor 1-5.
-- Akan terdapat beberapa paket berprotokol `HTTP`.
-- Didalam salah satu paket tersebut terdapat basic authorization yang didalamnya terdapat username dan password.
-- Gunakan username dan password untuk login ke `basic.ichimarumaru.tech`
-- Isi jawaban urutan konfigurasi pengkabelan `T568A`
-![Nomor 3](assets/Nomor%203.png)
-## 4. Temukan paket mysql yang mengandung perintah query select!
-Gunakan filter `mysql.query matches select`
-![no4-1](assets/no4-1.png)
-![no4-2](assets/no4-2.png)
-![no4-3](assets/no4-3.png)
+## 3. Filter sehingga wireshark hanya menampilkan paket yang menuju port 80! 
 
-## 5. Login ke portal.ichimarumaru.tech kemudian ikuti perintahnya! Username dan password bisa didapat dari query insert pada table users dari file .pcap!
-- Gunakan syntax filter `mysql contains username && mysql contains password`
-- Akan terdapat satu hasil paket berprotokol `MySQL`
-- Buka Paket tersebut akan terdapat query username dan password yang sama dengan yang diminta soal
-- Gunakan username dan password untuk login ke `portal.ichimarumaru.tech`
-- Isi jawaban urutan konfigurasi pengkabelan `T568B`
-![Nomor 5](assets/Nomor%205.png)
-## 6. Cari username dan password ketika melakukan login ke FTP Server!
-- Gunakan display filter `ftp`
-- Cari bagian yang memiliki argumen `Request: USER` diikuti dengan username FTP Server
-- Untuk passwordnya, cari bagian yang memiliki argumen `Request: PASS` diikuti dengan password FTP Server
-![Nomor 4](https://i.imgur.com/4Nym81b.png)
+Menggunakan `tcp.dstport==80`, sehingga didapatkan hasil
 
-## 7. Ada 500 file zip yang disimpan ke FTP Server dengan nama 0.zip, 1.zip, 2.zip, ..., 499.zip. Simpan dan Buka file pdf tersebut. (Hint = nama pdf-nya "Real.pdf")
-- Gunakan syntax filter `frame contains Real.pdf`
-- Akan terdapat paket yang berprotokol `FTP-DATA`
-- klik kanan salah satu paket dan kemudian follow TCP Stream
-![Nomor 7-1](assets/Nomor%207-1.png)
-- Pilih untuk menampilkan data dalam `Raw`
-![Nomor 7-2](assets/Nomor%207-2.png)
-- Kemudian save as `Real.pdf`
-![Nomor 7-3](assets/Nomor%207-3.png)
-- Jika berhasil, File tersebut jika dibuka akan terdapat tulisan `YOU FOUND ME`
-![Nomor 7-4](assets/Nomor%207-4.png)
-## 8. Cari paket yang menunjukan pengambilan file dari FTP tersebut!
-- Gunakan display filter `ftp.request.command==RETR`
-![Nomor 8](https://i.imgur.com/cseYOBk.png)
-Ternyata kosong, karena tidak ada file yang diambil (download)
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192125541-bdfa22e8-153d-4eec-ac2a-0c77471ad9a6.png">
 
-## 9. Dari paket-paket yang menuju FTP terdapat inidkasi penyimpanan beberapa file. Salah satunya adalah sebuah file berisi data rahasia dengan nama "secret.zip". Simpan dan buka file tersebut!
-- Gunakan syntax filter `ftp-data.command contains "secret.zip"`
-![Nomor 9-1](assets/Nomor%209-1.png)
-- Akan terdapat paket yang berprotokol `FTP-DATA`
-- klik kanan salah satu paket dan kemudian follow TCP Stream
-![Nomor 9-2](assets/Nomor%209-2.png)
-- Pilih untuk menampilkan data dalam `Raw`
-![Nomor 9-3](assets/Nomor%209-3.png)
-- Kemudian save as `secret.zip`
-![Nomor 9-4](assets/Nomor%209-4.png)
-- Jika berhasil, Didalam zip file tersebut terdapat wanted.pdf yang dikunci
-![Nomor 9-5](assets/Nomor%209-5.png)
+## 4. Filter sehingga wireshark hanya mengambil paket yang berasal dari port 21!
 
-## 10. Selain itu terdapat "history.txt" yang kemungkinan berisi history bash server tersebut! Gunakan isi dari "history.txt" untuk menemukan password untuk membuka file rahasia yang ada di "secret.zip"!
+Menggunakan `tcp.srcport==21`, sehingga didapatkan hasil
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192125572-c05645b7-71ab-4c21-ba57-cb17673794b0.png">
+
+## 5. Filter sehingga wireshark hanya mengambil paket yang berasal dari port 443!
+
+Menggunakan `tcp.srcport==443`, sehingga didapatkan hasil
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192125647-109c26b1-ed38-478d-ade0-c5b15cdb0379.png">
+
+## 6. Filter sehingga wireshark hanya menampilkan paket yang menuju ke lipi.go.id !
+
+Menggunakan `http.host contains “lipi.go.id” `, sehingga didapatkan hasil
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192125676-eaff1385-5a31-43b4-b1f6-402f85e30250.png">
+
+## 7. Filter sehingga wireshark hanya mengambil paket yang berasal dari ip kalian!
+
+Menggunakan `src host IP` `src host 192.168.0.3`, sehingga didapatkan hasil
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192125748-3c8a5c46-e103-405a-bfb7-cd75dfe03cfc.png">
+
+## Untuk soal 8-10, silahkan baca cerita di bawah ini!
+
+```
+Di sebuah planet bernama Viltrumite, terdapat Kementerian Komunikasi dan Informatika yang baru saja menetapkan kebijakan baru. Dalam kebijakan baru tersebut, pemerintah dapat mengakses data pribadi masyarakat secara bebas jika memang dibutuhkan, baik dengan maupun tanpa persetujuan pihak yang bersangkutan. Sebagai mahasiswa yang sedang melaksanakan program magang di kementerian tersebut, kalian mendapat tugas berupa penyadapan percakapan mahasiswa yang diduga melakukan tindak kecurangan dalam kegiatan Praktikum Komunikasi Data dan Jaringan Komputer 2022. Selain itu, terdapat sebuah password rahasia (flag) yang diduga merupakan milik sebuah organisasi bawah tanah yang selama ini tidak sejalan dengan pemerintahan Planet Viltrumite. Tunggu apa lagi, segera kerjakan tugas magang tersebut agar kalian bisa mendapatkan pujian serta kenaikan jabatan di kementerian tersebut!
+```
+## 8. Telusuri aliran paket dalam file .pcap yang diberikan, cari informasi berguna berupa percakapan antara dua mahasiswa terkait tindakan kecurangan pada kegiatan praktikum. Percakapan tersebut dilaporkan menggunakan protokol jaringan dengan tingkat keandalan yang tinggi dalam pertukaran datanya sehingga kalian perlu menerapkan filter dengan protokol yang tersebut.
+
+## 9. Terdapat laporan adanya pertukaran file yang dilakukan oleh kedua mahasiswa dalam percakapan yang diperoleh, carilah file yang dimaksud! Untuk memudahkan laporan kepada atasan, beri nama file yang ditemukan dengan format [nama_kelompok].des3 dan simpan output file dengan nama “flag.txt”.
+
+## 10. Temukan password rahasia (flag) dari organisasi bawah tanah yang disebutkan di atas!
