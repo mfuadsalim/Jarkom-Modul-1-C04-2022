@@ -10,7 +10,7 @@ Anggota Kelompok C04 :
 ## 1. Sebutkan web server yang digunakan pada "monta.if.its.ac.id"! 
 - Display filter dengan syntax `http.host == ichimarumaru.tech`
 - Klik kanan kemudian klik follow dan pilih TCP Stream
-![no1-1](<img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192124823-2c68b704-317d-49fa-a1b4-bd98fd8c1b11.png">)
+(<img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192124823-2c68b704-317d-49fa-a1b4-bd98fd8c1b11.png">)
 - Klik kanan dan klik follow lalu pilih TCP stream
 - Web server yang digunakan adalah nginx/1.10.3
 ![no1-2](![image](https://user-images.githubusercontent.com/94664744/192124873-5c802211-181a-4ab8-bd83-eca55b21df74.png))
