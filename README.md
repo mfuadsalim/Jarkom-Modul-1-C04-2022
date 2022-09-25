@@ -16,7 +16,6 @@ Display filter dengan syntax `http.host contains monta.if.ac.id`. Klik kanan kem
  
 <img width="640" alt="image" src="https://user-images.githubusercontent.com/94664744/192125193-e02ac6df-aec1-43bc-9a4f-1275380ab8ac.png">
 
-
 ## 2.Ishaq sedang bingung mencari topik ta untuk semester ini , lalu ia datang ke website monta dan menemukan detail topik pada website “monta.if.its.ac.id” , judul TA apa yang dibuka oleh ishaq ?
 
 Menggunakan filter `http.host contains monta.if.ac.id`. Kemudian klik `file` lalu klik `export objects` dan klik http.
@@ -30,7 +29,6 @@ Kemudian pilih file dengan nama `194` karena file tersebut yang mengandung file 
 Maka didapatkan hasil seperti gambar di bawah.
 
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192125304-5cdee7cf-f507-405b-a0cb-ee64482cb446.png">
-
 
 ## 3. Filter sehingga wireshark hanya menampilkan paket yang menuju port 80! 
 
