@@ -8,18 +8,28 @@ Anggota Kelompok C04 :
 * 5025201257 - Sastiara Maulikh
 
 ## 1. Sebutkan web server yang digunakan pada "monta.if.its.ac.id"! 
-Display filter dengan syntax "http.host contains monta.if.ac.id". Klik kanan kemudian klik follow dan pilih TCP Stream.
+Display filter dengan syntax 'http.host contains monta.if.ac.id'. Klik kanan kemudian klik follow dan pilih TCP Stream.
+
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192124823-2c68b704-317d-49fa-a1b4-bd98fd8c1b11.png">
+
  Web server yang digunakan adalah nginx/1.10.3
+ 
 <img width="640" alt="image" src="https://user-images.githubusercontent.com/94664744/192125193-e02ac6df-aec1-43bc-9a4f-1275380ab8ac.png">
+
 
 ## 2.Ishaq sedang bingung mencari topik ta untuk semester ini , lalu ia datang ke website monta dan menemukan detail topik pada website “monta.if.its.ac.id” , judul TA apa yang dibuka oleh ishaq ?
 Menggunakan filter "http.host contains monta.if.ac.id". Kemudian klik “file” lalu klik “export objects” dan klik http.
+
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192125257-78679f6f-bb12-4929-a566-e696d7e3b8d3.png">
+
 Kemudian pilih file dengan nama “194” karena file tersebut yang mengandung file detail topik. Save file tersebut dengan format html.
+
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192125286-896ce937-a8d7-4d1c-8dd5-974210c64f05.png">
-Maka didapatkan hasil seperti gambar di bawah
+
+Maka didapatkan hasil seperti gambar di bawah.
+
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192125304-5cdee7cf-f507-405b-a0cb-ee64482cb446.png">
+
 
 ## 3. Ikuti perintah di basic.ichimarumaru.tech! Username dan password bisa didapatkan dari file .pcapng!
 - Gunakan syntax filter `http.host contains "basic.ichimarumaru.tech"` pada file `.pcapng` yang telah didownload untuk nomor 1-5.
