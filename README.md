@@ -8,12 +8,12 @@ Anggota Kelompok C04 :
 * 5025201257 - Sastiara Maulikh
 
 ## 1. Sebutkan web server yang digunakan pada "monta.if.its.ac.id"! 
-- Display filter dengan syntax `http.host == ichimarumaru.tech`
+- Display filter dengan syntax 
 - Klik kanan kemudian klik follow dan pilih TCP Stream
-(<img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192124823-2c68b704-317d-49fa-a1b4-bd98fd8c1b11.png">)
-- Klik kanan dan klik follow lalu pilih TCP stream
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/94664744/192124823-2c68b704-317d-49fa-a1b4-bd98fd8c1b11.png">
 - Web server yang digunakan adalah nginx/1.10.3
-![no1-2](![image](https://user-images.githubusercontent.com/94664744/192124873-5c802211-181a-4ab8-bd83-eca55b21df74.png))
+![image](https://user-images.githubusercontent.com/94664744/192125146-3eb43b1a-3e46-4015-bf0c-2e4b58ceabaa.png)
+
 
 ## 2.Ishaq sedang bingung mencari topik ta untuk semester ini , lalu ia datang ke website monta dan menemukan detail topik pada website “monta.if.its.ac.id” , judul TA apa yang dibuka oleh ishaq ?
 - Menggunakan filter http.host contains monta.if.ac.id, kemudian akan muncul seperti gambar di bawah.
