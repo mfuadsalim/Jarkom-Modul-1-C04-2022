@@ -67,6 +67,26 @@ Di sebuah planet bernama Viltrumite, terdapat Kementerian Komunikasi dan Informa
 ```
 ### 8. Telusuri aliran paket dalam file .pcap yang diberikan, cari informasi berguna berupa percakapan antara dua mahasiswa terkait tindakan kecurangan pada kegiatan praktikum. Percakapan tersebut dilaporkan menggunakan protokol jaringan dengan tingkat keandalan yang tinggi dalam pertukaran datanya sehingga kalian perlu menerapkan filter dengan protokol yang tersebut.
 
+Setelah dianalisa di wireshark terdapat kejanggalan di port `60236` & `65432`
+
+Maka dari itu kita dapat memfilter paket=paket yang berasal dan akan menuju ke port-port tersebut dengan `“tcp.port == 60236 && tcp.port == 65432”`
+
+![no8](https://user-images.githubusercontent.com/80630201/192173819-ee046e7f-aba1-4774-a901-b892476808a7.png)
+
+Kemudian kita hanya perlu melakukan follow pada hasil filter tersebut dan akan muncul percakapan antara dua mahasiswa tersebut
+
+![no8 1](https://user-images.githubusercontent.com/80630201/192173821-dd52904f-7a9f-4939-b952-4619f7d55e75.png)
+
 ### 9. Terdapat laporan adanya pertukaran file yang dilakukan oleh kedua mahasiswa dalam percakapan yang diperoleh, carilah file yang dimaksud! Untuk memudahkan laporan kepada atasan, beri nama file yang ditemukan dengan format [nama_kelompok].des3 dan simpan output file dengan nama “flag.txt”.
 
+Dengan informasi percakapan yang ada pada soal sebelumnya diketahui bahwa kedua mahasiswa tersebut akan mengirim file di port `9002`, maka dari itu kita dapat memfilter dengan `“tcp.port == 9002”` lalu kita cari file salt dari hasil filter tersebut, setelah file salt ditemukan selanjutnya kita follow file tersebut dan kemudian save as file tersebut dengan nama sesuai ketentuan soal yaitu `C04.des3`.
+
+![no9 1](https://user-images.githubusercontent.com/80630201/192173744-3dc60f1a-0aa1-42f8-a969-d61019180418.png)
+
+![no9 2](https://user-images.githubusercontent.com/80630201/192173752-7e91f3dd-6bac-43c8-a9fc-3cdcc38245bb.png)
+
+Selanjutnya kita akan decrypt file tersebut dengan `openssl` dengan metode `des3` menggunakan terminal, di sini kami menggunakan terminal linux
+
 ### 10. Temukan password rahasia (flag) dari organisasi bawah tanah yang disebutkan di atas!
+
+![no10](https://user-images.githubusercontent.com/80630201/192174131-1bd77d04-402b-48c4-9940-200129b2c998.png)
